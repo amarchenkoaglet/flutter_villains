@@ -7,7 +7,7 @@ class PreferredSizeProxy extends StatelessWidget implements PreferredSizeWidget 
   final PreferredSizeWidget preferredSizeWidget;
   final WidgetWithChildBuilder widgetWithChildBuilder;
 
-  const PreferredSizeProxy({Key key, this.preferredSizeWidget, this.widgetWithChildBuilder}) : super(key: key);
+  const PreferredSizeProxy({Key? key, required this.preferredSizeWidget, required this.widgetWithChildBuilder}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

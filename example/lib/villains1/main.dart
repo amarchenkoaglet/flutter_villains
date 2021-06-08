@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -50,23 +50,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new RaisedButton(
+            new ElevatedButton(
                 onPressed: ()=>Navigator.of(context).pushNamed('grid'),
               child: new Text("Grid"),
             ),
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: ()=>Navigator.of(context).pushNamed('profile'),
               child: new Text("profile"),
             ),
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: ()=>Navigator.of(context).pushNamed('profile_page_2'),
               child: new Text("profile_page_no_hero"),
             ),
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: ()=>Navigator.of(context).pushNamed('list'),
               child: new Text("list"),
             ),
-            new RaisedButton(
+            new ElevatedButton(
               onPressed: ()=>Navigator.of(context).pushReplacementNamed('profile_page_2'),
               child: new Text("replace with profile_page_no_hero"),
             ),

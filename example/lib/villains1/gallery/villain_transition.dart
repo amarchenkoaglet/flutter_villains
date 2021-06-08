@@ -40,7 +40,7 @@ class PictureDetailPage extends StatefulWidget {
 
   final String url;
 
-  const PictureDetailPage({Key key, this.url}) : super(key: key);
+  const PictureDetailPage({Key? key, required this.url}) : super(key: key);
 
   @override
   _PictureDetailPageState createState() => new _PictureDetailPageState();
