@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/scheduler/ticker.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_sequence_animation/flutter_sequence_animation.dart';
 
 class VillainController {
@@ -326,7 +326,7 @@ class VillainAnimation {
         animatable: Tween<double>(begin: fromAngle, end: toAngle),
         animatedWidgetBuilder: (animation, child) {
           return AnimatedBuilder(
-            animation: animation  as Animation<double>,
+            animation: animation as Animation<double>,
             builder: (BuildContext a, Widget? b) {
               return Transform.rotate(
                 angle: animation.value,
@@ -354,7 +354,7 @@ class VillainAnimation {
               animation: animation,
               builder: (BuildContext a, Widget? b) {
                 return Transform.translate(
-                  offset: animation.value ,
+                  offset: animation.value,
                   child: child,
                 );
               },
@@ -418,7 +418,7 @@ class VillainTransitionObserver extends NavigatorObserver {
       // going to end up, and the `to` route will go back onstage.
       //   to.offstage = to.animation.value == 0.0;
 
-      WidgetsBinding.instance?.addPostFrameCallback((Duration value) {
+      WidgetsBinding.instance.addPostFrameCallback((Duration value) {
         _startVillainTransition(from, to, didPop);
       });
     }
